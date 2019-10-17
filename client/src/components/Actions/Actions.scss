@@ -1,0 +1,38 @@
+%flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container {
+  @extend %flex-row;
+  justify-content: space-between;
+  height: 48px;
+}
+
+.alertContainer {
+  @extend %flex-row;
+}
+
+%text {
+  font-size: 16px;
+  color: #00b2d6;
+}
+
+.filter {
+  @extend %text;
+  margin-left: 0.75rem;
+}
+
+.sort {
+  @extend %text;
+  margin-left: 3em;
+}
+
+.price {
+  @extend %text;
+  margin-right: 0.75rem;
+}
+
+.priceAlertsIcon {
+  fill: #00b2d6;
+}
