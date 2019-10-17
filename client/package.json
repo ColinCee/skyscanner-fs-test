@@ -19,7 +19,12 @@
     "bpk-stylesheets": "^3.2.100",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-test-renderer": "^16.3.1"
+    "react-test-renderer": "^16.3.1",
+    "semantic-ui-react": "^0.88.1"
   },
-  "proxy": "http://localhost:4000"
+  "proxy": "http://localhost:4000",
+  "dependencies": {
+    "bpk-component-button": "^3.0.5",
+    "bpk-component-icon": "^5.0.5"
+  }
 }

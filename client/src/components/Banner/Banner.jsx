@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
 import BpkText from 'bpk-component-text';
-import BpkLongArrowIcon from 'bpk-component-icon/lg/long-arrow-right'
-import styles from './Banner.scss'
+import BpkLongArrowIcon from 'bpk-component-icon/lg/long-arrow-right';
+import styles from './Banner.scss';
 
-const Banner = () => {
-  console.log(styles)
-  return <div className={styles.banner}>
+const Banner = () => (
+  <div className={styles.banner}>
     <div className={styles.container}>
       <div>
         <BpkText className={styles.location}>EDI</BpkText>
@@ -17,6 +16,6 @@ const Banner = () => {
       </div>
     </div>
   </div>
-}
+);
 
-export default Banner
+export default Banner;

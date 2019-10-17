@@ -1,10 +1,10 @@
 import React from 'react';
-import BpkText from 'bpk-component-text';
-
 import STYLES from './App.scss';
 import Header from './../Header';
-import Banner from '../Banner/Banner'
+import Banner from '../Banner/Banner';
 import Actions from '../Actions/Actions';
+import Result from '../Result/Result';
+
 const c = className => STYLES[className] || 'UNKNOWN';
 
 const App = () => (
@@ -12,9 +12,7 @@ const App = () => (
     <Header />
     <Banner />
     <Actions />
-    <main className={c('App__main')}>
-      <BpkText tagName="p">Over to you...</BpkText>
-    </main>
+    <Result />
   </div>
 );
 

@@ -1,1 +1,3 @@
-export { default as Leg } from "./Leg";
+import Leg from './Leg';
+
+export default Leg;

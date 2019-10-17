@@ -1,0 +1,72 @@
+.airlineIcon {
+  height: 24px;
+  width: 24px;
+}
+
+%flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flightDetails {
+  @extend %flexRow;
+}
+
+.leg {
+  @extend %flexRow;
+  justify-content: space-between;
+  margin-left: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+%flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexCol {
+  @extend %flexCol;
+  justify-content: center;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.flightInfo {
+  @extend %flexCol;
+  align-self: center;
+  margin-right: 0.75rem;
+}
+
+.arrowIcon {
+  align-self: center;
+  fill: #b2aebd;
+}
+
+%text {
+  line-height: 1rem;
+}
+
+.timeText {
+  @extend %text;
+  color: #252033;
+  margin-bottom: 0.5em;
+}
+
+.airportText {
+  @extend %text;
+  font-size: 16px;
+  color: #817b8f;
+}
+
+.durationText {
+  @extend %text;
+  font-size: 12px;
+  color: #817b8f;
+}
+
+.stopsText {
+  @extend %text;
+  font-size: 12px;
+  color: #00d775;
+}

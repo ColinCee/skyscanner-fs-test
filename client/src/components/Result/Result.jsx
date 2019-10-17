@@ -1,13 +1,20 @@
-import React from "react";
-import { Leg } from "./Leg";
+import React from 'react';
+import BpkButton from 'bpk-component-button';
+import Leg from './Leg';
+import styles from './Result.scss';
 
-const Result = () => {
-  return (
-    <div>
-      <Leg />
-      <Leg />
+const Result = () => (
+  <div className={styles.result}>
+    <Leg />
+    <Leg />
+    <div className={styles.flexRow}>
+      <div className={styles.flexCol}>
+        <h1 className={styles.priceText}>£98</h1>
+        <p className={styles.siteText}>omegaflightstore.com</p>
+      </div>
+      <BpkButton className={styles.button}>Select</BpkButton>
     </div>
-  );
-};
+  </div>
+);
 
 export default Result;
