@@ -1,13 +1,13 @@
 import React from 'react';
-import { Image } from 'semantic-ui-react';
 import BpkLongArrowIcon from 'bpk-component-icon/lg/long-arrow-right';
 import styles from './Leg.scss';
 
 const Leg = () => (
   <div className={styles.leg}>
     <div className={styles.flightDetails}>
-      <Image
+      <img
         src={`${process.env.PUBLIC_URL} EZ.png`}
+        alt='Airline Icon'
         className={styles.airlineIcon}
       />
       <div className={styles.flexCol}>
