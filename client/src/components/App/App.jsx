@@ -3,7 +3,7 @@ import STYLES from './App.scss';
 import Header from './../Header';
 import Banner from '../Banner/Banner';
 import Actions from '../Actions/Actions';
-import Result from '../Result/Result';
+import ResultList from '../Result/ResultList';
 
 const c = className => STYLES[className] || 'UNKNOWN';
 
@@ -12,7 +12,7 @@ const App = () => (
     <Header />
     <Banner />
     <Actions />
-    <Result />
+    <ResultList />
   </div>
 );
 

@@ -5,10 +5,14 @@ const express = require('express');
 
 const app = express();
 const livePricing = require('./live-pricing');
+const transformResults = require('./transformResults');
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
   next();
 });
 
@@ -26,16 +30,10 @@ app.get('/', (req, res) => {
 */
 app.get('/api/search', async (req, res) => {
   try {
-    const results = await livePricing.search({
-    /*
-     TODO: client to provide params.
-     Some params are already provided for you - see live-pricing.js.
-     Check API docs to see the other params you need to provide.
-     */
-    });
-    // TODO - a better format for displaying results to the client
-    console.log('TODO: transform results for consumption by client');
-    res.json(results);
+    // Should technically do some validation on the req.query object
+    const results = await livePricing.search(req.query);
+    const transformedResults = transformResults(results);
+    res.json(transformedResults);
   } catch (err) {
     res.status(500).send(err);
     console.error(err);
