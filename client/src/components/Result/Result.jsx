@@ -3,10 +3,10 @@ import BpkButton from 'bpk-component-button';
 import Leg from './Leg';
 import styles from './Result.scss';
 
-const Result = () => (
+const Result = props => (
   <div className={styles.result}>
-    <Leg />
-    <Leg />
+    <Leg {...props} />
+    <Leg {...props} />
     <div className={styles.flexRow}>
       <div className={styles.flexCol}>
         <h1 className={styles.priceText}>£98</h1>

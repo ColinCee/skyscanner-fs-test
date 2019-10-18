@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import flights from '../../api/flights';
+import Result from './Result';
 
 const ResultList = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
     const results = await flights.fetch();
-    setData(results.data);
+    await setData(results.data);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  console.log(data);
+  const results = data.map((value, index) => {
+    return <Result data={value} key={index} />;
+  });
+
   return (
     <div>
-      Hello
+      {results}
     </div>
   );
 };
