@@ -1,3 +1,12 @@
+const isLegDirect = (id, legs) => {
+  // eslint-disable-next-line no-restricted-syntax
+  for (const leg of legs) {
+    if (leg.Id !== id) {
+      continue;
+    }
+    return leg.SegmentIds.length === 1;
+  }
+}
 const getLegDataById = (id, legs) => {
   // eslint-disable-next-line no-restricted-syntax
   for (const leg of legs) {
@@ -16,19 +25,28 @@ const transformResults = (results) => {
   const itineraries = results.Itineraries;
   const legs = results.Legs;
   const output = [];
+  let index = 0;
 
-  // for 10 itenaries
-  for (let i = 0; i < 10; i += 1) {
-    const itinerary = itineraries[i];
-    const outboundLeg = getLegDataById(itinerary.OutboundLegId, legs);
-    const inboundLeg = getLegDataById(itinerary.InboundLegId, legs);
-    const price = itinerary.PricingOptions[0].Price;
+  while (output.length < 15) {
+    const itinerary = itineraries[index];
+    index += 1;
+    const { OutboundLegId, InboundLegId, PricingOptions } = itinerary;
+
+    // Skip non direct journeys since the front end does not support it
+    if (!isLegDirect(OutboundLegId, legs) || !isLegDirect(InboundLegId, legs)) {
+      continue;
+    }
+
+    const outboundLeg = getLegDataById(OutboundLegId, legs);
+    const inboundLeg = getLegDataById(InboundLegId, legs);
+    const price = PricingOptions[0].Price;
 
     const data = {
       outbound: outboundLeg,
       inbound: inboundLeg,
       price,
     };
+
     output.push(data);
   }
 

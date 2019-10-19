@@ -15,7 +15,7 @@ const ResultList = () => {
   }, []);
 
   const results = data.map((value, index) => {
-    return <Result data={value} key={index} />;
+    return <Result {...value} key={index} />;
   });
 
   return (
