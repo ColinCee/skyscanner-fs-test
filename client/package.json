@@ -19,14 +19,14 @@
     "bpk-stylesheets": "^3.2.100",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-test-renderer": "^16.10.2",
-    "semantic-ui-react": "^0.88.1"
+    "react-test-renderer": "^16.10.2"
   },
   "proxy": "http://localhost:4000",
   "dependencies": {
     "axios": "^0.19.0",
     "bpk-component-button": "^3.0.5",
     "bpk-component-icon": "^5.0.5",
+    "bpk-component-spinner": "^3.0.5",
     "moment": "^2.24.0"
   }
 }

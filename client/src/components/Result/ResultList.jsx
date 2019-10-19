@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { BpkExtraLargeSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
 import flights from '../../api/flights';
 import Result from './Result';
+import styles from './ResultsList.scss';
 
 const ResultList = () => {
   const [data, setData] = useState([]);
@@ -18,6 +20,13 @@ const ResultList = () => {
     return <Result {...value} key={index} />;
   });
 
+  if (data.length === 0) {
+    return (
+      <div className={styles.spinner}>
+        <BpkExtraLargeSpinner type={SPINNER_TYPES.primary} />
+      </div>
+    );
+  }
   return (
     <div>
       {results}
