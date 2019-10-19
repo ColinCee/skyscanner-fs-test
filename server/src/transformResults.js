@@ -6,7 +6,8 @@ const isLegDirect = (id, legs) => {
     }
     return leg.SegmentIds.length === 1;
   }
-}
+  return false;
+};
 const getLegDataById = (id, legs) => {
   // eslint-disable-next-line no-restricted-syntax
   for (const leg of legs) {
@@ -15,13 +16,13 @@ const getLegDataById = (id, legs) => {
     }
     return {
       departure: leg.Departure,
-      arrival: leg.Arrival
+      arrival: leg.Arrival,
     };
   }
+  return {};
 };
 
 const transformResults = (results) => {
-
   const itineraries = results.Itineraries;
   const legs = results.Legs;
   const output = [];
