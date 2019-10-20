@@ -6,7 +6,6 @@ Axios to make http requests
 moment to handle timestamps
 
 ### Q) What is the command to start the server?
-zx
 APIKEY=ss630745725358065467897349852985 npm run server 
 
 ---
