@@ -3,10 +3,10 @@
 ### Q) What libraries did you add to the frontend? What are they used for?
 Some backpack components for displaying icons/spinners
 Axios to make http requests
-moment to handheld timestamps
+moment to handle timestamps
 
 ### Q) What is the command to start the server?
-
+zx
 APIKEY=ss630745725358065467897349852985 npm run server 
 
 ---
@@ -17,6 +17,7 @@ APIKEY=ss630745725358065467897349852985 npm run server
 7 hours over the course of a week
 
 ### Q) If you had more time, what further improvements or new features would you add?
+Tests
 Validation on input provided by the client
 Support legs with multiple segments (non-direct legs)
 Fetch more results on scrolling down
